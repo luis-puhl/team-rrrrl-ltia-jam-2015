@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="minmax">
+<head>
+	<title>Ltia JAM - API documentation</title>
+</head>
+<body>
+	<h2>User</h2>
+	<ul>
+		<li>id - int</li>
+		<li>name - char(45)</li>
+		<li>avatar_id - int</li>
+	</ul>
+
+	<h2>Question</h2>
+	<ul>
+		<li>id - int</li>
+		<li>question - char(250)</li>
+		<li>user_id - int</li>
+	</ul>
+
+	<h2>Awnser</h2>
+	<ul>
+		<li>id - int</li>
+		<li>question_id - int</li>
+		<li>awnser - char(120)</li>
+		<li>order - int</li>
+		<li>counter - int</li>
+		<li>owner_prefered - int</li>
+	</ul>
+
+	<h2>Comment</h2>
+	<ul>
+		<li>id - int</li>
+		<li>comment - char(120)</li>
+		<li>question_id - int</li>
+		<li>awnser_id - int</li>
+		<li>counter - int</li>
+	</ul>
+</body>
+</html>

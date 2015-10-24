@@ -38,8 +38,9 @@ $app = new \Slim\Slim(array(
 
 $app->response->headers->set('Content-Type', 'application/json');
 
-$app->get('/', function () {
-	echo "this is root api";
+$app->get('/', function () use ($app) {
+	$app->response->headers->set('Content-Type', 'text/html');
+	$app->render('index.html');
 });
 
 $app->get('/hello/:name', function ($name) {
