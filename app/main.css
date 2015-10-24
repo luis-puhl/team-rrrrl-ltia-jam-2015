@@ -1,0 +1,28 @@
+body {
+  padding-top: 50px;
+}
+.main-content {
+  padding: 40px 15px;
+}
+
+img.avatar {
+	position: absolute;
+}
+
+div.inner-round {
+	background: #c00; /* fallback */
+	background: radial-gradient(circle at -200px 75px, rgba(204,0,0,0) 220px, #c00 220px);
+	padding: 1em;
+	padding-left: 40px;
+	margin-left: 150px;
+	
+	height: 200px;
+	background-repeat: no-repeat;
+}
+
+button {
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+	padding: 0.3em;
+	border-radius: 0.3em;
+}

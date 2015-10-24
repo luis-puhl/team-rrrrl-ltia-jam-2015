@@ -1,0 +1,92 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="minmax">
+<head >
+	<title >User Feedback</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="../libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
+	<link href="main.css" rel="stylesheet" >
+</head >
+
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >User Feedback
+			</a >
+		</div >
+	</div >
+</nav >
+
+<div class="container main-content" ng-controller="MinMaxCtrl">
+
+
+
+	<img class='avatar' src="http://placehold.it/150x200" />
+
+	<div class="inner-round">
+		<span class='question'>
+		La pregunta dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat
+		</span>
+	</div>
+	<br />
+
+	<button>
+		<span>
+		La pregunta dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat
+		</span>
+	</button>
+	<button>
+		<span>
+		La pregunta dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat
+		</span>
+	</button>
+	<button>
+		<span>
+		La pregunta dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat
+		</span>
+	</button>
+	<button>
+		<span>
+		La pregunta dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nat
+		</span>
+	</button>
+
+	<form ng-submit="onSubmit()"
+		novalidate="novalidate"
+		ng-hide="submitted" >
+		
+		<div class="form-group" >
+			<label for="name" class="control-label">Comment:</label >
+			<input type="text"
+			       class="form-control"
+			       ng-model="formModel.name"
+			       id="comment"
+					required="required" >
+		</div >
+		<div class="form-group">
+			<button class="btn btn-primary"
+			        ladda="submitting"
+			        data-style="expand-right"
+							type="submit">
+				<span ng-show="submitting">Posting...</span>
+				<span ng-show="!submitting">Comment!</span>
+			</button>
+		</div>
+
+	</form >
+
+</div >
+
+
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="../libs/angular-auto-validate/dist/jcs-auto-validate.min.js" ></script >
+<script src="../libs/ladda/dist/spin.min.js" ></script >
+<script src="../libs/ladda/dist/ladda.min.js" ></script >
+<script src="../libs/angular-ladda/dist/angular-ladda.min.js" ></script >
+
+<script src="main.js" ></script >
+
+
+</body >
+</html >

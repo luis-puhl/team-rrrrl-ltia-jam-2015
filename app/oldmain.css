@@ -1,0 +1,41 @@
+
+body {
+  padding-top: 50px;  
+}
+
+.main-content{
+	padding-top: 3em;
+	margin: 1em;
+}
+
+span {
+	padding: 1em;
+}
+
+button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+	border-radius: 1em;
+	font-size: 1.5em;
+}
+
+.avatar {
+	position: absolute;
+}
+
+.inner-round {
+   background: #c00; /* fallback */
+   background: radial-gradient(circle at -1.5em 2em, rgba(204,0,0,0) 8em, #c00 8em);
+   background-repeat: no-repeat;
+   padding: 1em;
+   padding-left: 8em;
+}
+
+span {
+	font-size: 2em;
+}
+
+span.question {
+	font-size: 3em;
+}
