@@ -28,7 +28,6 @@ class Awnser {
 	public $owner_prefered;
 }
 
-
 $app = new \Slim\Slim(array(
     'debug' => true,
     'user.user' => 'jamUser',
@@ -55,9 +54,10 @@ $app->get('/question/:id', function ($id) use ($app) {
 			$app->config('user.pass')
 		);
 		$stm = $dbh->prepare('SELECT * FROM question WHERE id = :id');
-		
+
+		$stm->setFetchMode(PDO::FETCH_INTO, $result);
 		$stm->execute(array(':id' => $id));
-		$result = $stm->fetch(PDO::FETCH_OBJ);
+		$result = $stm->fetch();
 
 		$dbh = null;
 	} catch (PDOException $e) {
@@ -79,8 +79,9 @@ $app->get('/user/:id', function ($id)  use ($app) {
 		
 		$stm = $dbh->prepare('SELECT id, name, avatar_id FROM user WHERE id = :id');
 		
+		$stm->setFetchMode(PDO::FETCH_INTO, $result);
 		$stm->execute(array(':id' => $id));
-		$result = $stm->fetch(PDO::FETCH_OBJ);
+		$result = $stm->fetch();
 
 		$dbh = null;
 	} catch (PDOException $e) {
