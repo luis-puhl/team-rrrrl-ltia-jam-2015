@@ -14,8 +14,7 @@
 		<img src="http://placehold.it/128x170/" alt="logo" id="logo" />
 
 		<br />
-
-		<form action="1-awnser.html" method="POST">
+			<p id="error-message">Are you a part of the system already?</p>
 			<div class="container" id="loginFrame">
 				<div class="row">
 					<div class="col-xs-4">
@@ -35,12 +34,37 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<button type="submit">Login</button>
+						<button id="loginBtn">Login</button>
 					</div>
 				</div>
 			</div>
-		</form>
 	</div>
 
+	<script src="../js/jquery.js"></script>
+	<script type="text/javascript">
+		$("#error-message").hide();
+		$("#loginBtn").click(function () {
+			var request = $.ajax({
+			  url: "http://localhost/jam/api/login",
+			  method: "POST",
+			  data: { name : "" },
+			  dataType: "json"
+			});
+			 
+			request.done(function( msg ) {
+				console.log( msg );
+				// window.location("1-awnser.html");
+			});
+
+			request.success(function( msg ) {
+
+			}
+			 
+			request.fail(function( jqXHR, textStatus ) {
+				$("#pass").val("");
+				$("#error-message").show();
+			});
+		});	
+	</script>
 </body>
 </html>

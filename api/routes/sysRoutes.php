@@ -20,15 +20,17 @@ $app->post('/login', function ()  use ($app, $dbo) {
 		$stm->setFetchMode(PDO::FETCH_INTO, $result);
 		$stm->execute(array(':name' => $userName, ':pass' => $userPass));
 		$result = $stm->fetch();
+
+		if ($result && $result->id != null){
+			// start new
+			session_start();
+			login($result->id);
+		} else {
+			$app->halt(403, '{"message":"Incorrect user info."}');
+		}
 	} catch (PDOException $e) {
 		print "Error: " . $e->getMessage() . "<br/>";
 		die();
-	}
-
-	if ($result->id != null){
-		// start new
-		session_start();
-		login($result->id);
 	}
 
 	echo json_encode($result);
