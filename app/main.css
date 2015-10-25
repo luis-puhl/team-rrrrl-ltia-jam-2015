@@ -1,6 +1,7 @@
 .avatarBackground {
   background-image: url("http://placehold.it/360x180/cfcfcf");
   background-repeat: repeat-x;
+  background-color: wheat;
 }
 
 @media (max-width: @screen-xs-max) {
@@ -37,12 +38,13 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: gray;
 }
 #pregunta {
   font-size: 15px;
-  text-align: justify;
-  background-color: gray;
+}
+.perguntaBack{
+  background-image: url(img/perguntaBack.jpg);
+  background-repeat: no-repeat;
 }
 .resposta{
   margin: 2px;
@@ -76,3 +78,20 @@
   margin-right: 10%;
   margin-left: 10%;
 }
+
+/* Next Button */
+.btn.next {
+  border-right: none;
+  white-space: normal;
+
+  margin-left: -2em;
+  margin-right: -2em;
+
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  
+  height: 130px;
+  background-position: right;
+} 
