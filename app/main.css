@@ -55,3 +55,6 @@ span {
 
 }
 
+nav.sidebar .navbar-nav > li {
+  border: none;
+}
