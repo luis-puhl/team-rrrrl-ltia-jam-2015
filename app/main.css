@@ -1,6 +1,7 @@
 .avatarBackground {
   background-image: url("http://placehold.it/360x180/cfcfcf");
   background-repeat: repeat-x;
+  background-color: #fefefe;
 }
 
 @media (max-width: @screen-xs-max) {
